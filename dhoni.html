@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MS Dhoni - The Legend</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    
+    .hero-section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('rey.png') no-repeat center center;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    
+    .hero-content {
+      text-align: center;
+      z-index: 1;
+      padding: 0 20px;
+      max-width: 800px;
+    }
+    
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #ffcc00;
+      text-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+    }
+    
+    .hero-subtitle {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+    
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .bio-section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 60px;
+      color: #ffcc00;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #ffcc00;
+    }
+    
+    .bio-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+    
+.bio-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    filter: sepia(0.3) contrast(1.1);
+    transition: all 0.5s ease;
+}
+
+.bio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bio-image:hover {
+    filter: sepia(0) contrast(1.3) brightness(1.1);
+    transform: scale(1.02);
+}
+
+    
+    .bio-text {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+    }
+    
+    .bio-text p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+    
+    .stats-section {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 60px 20px;
+      margin: 40px 0;
+      border-radius: 15px;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .stat-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 204, 0, 0.3);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">MAHENDRA SINGH DHONI</h1>
+      <p class="hero-subtitle">Captain Cool • World Champion • Legend of Indian Cricket</p>
+    </div>
+    <div class="scroll-down" onclick="scrollToBio()">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+  
+  <section class="bio-section" id="bio">
+    <h2 class="section-title">THE DHONI STORY</h2>
+    <div class="bio-content">
+      <div class="bio-image">
+        <img src="64.png" alt="MS Dhoni">
+      </div>
+      <div class="bio-text">
+        <p>Mahendra Singh Dhoni, born on July 7, 1981, in Ranchi, Bihar (now Jharkhand), is one of the most successful captains in Indian cricket history. From being a ticket collector to becoming the most loved cricketer in India, Dhoni's journey is nothing short of inspirational.</p>
+        
+        <p>Known for his calm demeanor and sharp cricketing mind, Dhoni made his international debut in 2004 and quickly rose through the ranks with his explosive batting and lightning-fast wicketkeeping. His 148 against Pakistan in 2005 announced his arrival on the international stage.</p>
+        
+        <p>Dhoni took over the captaincy in 2007 and led India to victory in the inaugural T20 World Cup. Under his leadership, India reached the No. 1 ranking in Test cricket, won the 2011 ODI World Cup after 28 years, and the 2013 Champions Trophy, completing a unique treble of ICC trophies.</p>
+        
+        <p>Beyond his international success, Dhoni has been the face of Chennai Super Kings in the IPL, leading them to multiple titles and creating a legacy as one of the greatest finishers in limited-overs cricket.</p>
+      </div>
+    </div>
+    
+    <div class="stats-section">
+      <h2 class="section-title">BY THE NUMBERS</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">10,773</div>
+          <div class="stat-label">ODI Runs</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4,876</div>
+          <div class="stat-label">Test Runs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // Scroll to bio section
+    function scrollToBio() {
+      document.getElementById('bio').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

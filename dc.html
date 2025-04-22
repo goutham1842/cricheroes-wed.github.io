@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delhi Capitals 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dc-blue: #004C93;
+      --dc-red: #D7182A;
+      --dc-silver: #A4A4A4;
+      --dc-dark: #0E1E32;
+      --dc-light: #F5F5F5;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0E1E32;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--dc-dark);
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo img {
+      height: 40px;
+    }
+    
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--dc-red);
+    }
+    
+    .header {
+      text-align: center;
+      padding: 3rem 1rem;
+      margin-top: 80px;
+    }
+    
+    .header h1 {
+      font-size: 2.5rem;
+      color: var(--dc-blue);
+      margin-bottom: 1rem;
+    }
+    
+    .team-stats {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .stat-card {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      min-width: 120px;
+      text-align: center;
+    }
+    
+    .stat-card h3 {
+      color: var(--dc-silver);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-card p {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .players-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--dc-blue);
+    }
+    
+    .players-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .player-card {
+      background: rgba(30,30,30,0.7);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .player-header {
+      background: var(--dc-blue);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .player-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid var(--dc-silver);
+      object-fit: cover;
+    }
+    
+    .player-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+    
+    .retained-badge {
+      display: inline-block;
+      background: var(--dc-red);
+      color: white;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-left: 0.5rem;
+    }
+    
+    .player-info p {
+      color: var(--dc-silver);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    
+    .player-details {
+      padding: 1.5rem;
+    }
+    
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    
+    .detail-label {
+      color: var(--dc-silver);
+      font-size: 0.9rem;
+    }
+    
+    .price {
+      color: var(--dc-red);
+      font-weight: 800;
+    }
+    
+    .footer {
+      background: var(--dc-dark);
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dc-red);
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .copyright {
+      font-size: 0.9rem;
+      color: var(--dc-silver);
+    }
+    
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .players-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="dcbest.png" alt="Delhi Capitals Logo">
+      <span class="logo-text">DELHI CAPITALS</span>
+    </div>
+  </nav>
+
+  <header class="header">
+    <h1>DELHI CAPITALS 2025</h1>
+    <p>The official squad for IPL 2025 season. A perfect blend of youth and experience ready to conquer the tournament.</p>
+    
+    <div class="team-stats">
+      <div class="stat-card">
+        <h3>Total Players</h3>
+        <p>25</p>
+      </div>
+      <div class="stat-card">
+        <h3>Total Spent</h3>
+        <p>₹87.5 Cr</p>
+      </div>
+      <div class="stat-card">
+        <h3>Retained Players</h3>
+        <p>3</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="players-container">
+    <h2 class="section-title">BATTING LINEUP</h2>
+    <div class="players-grid">
+      <!-- Player 1 - Axar Patel -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="axar.png" alt="Axar Patel" class="player-image">
+          <div class="player-info">
+            <h3>Axar Patel <span class="retained-badge">Retained</span></h3>
+            <p>All-Rounder</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹12 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Wickets</span>
+            <span>112</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>1,245</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 2 - Jake Fraser-McGurk -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="jack.png" alt="Jake Fraser-McGurk" class="player-image">
+          <div class="player-info">
+            <h3>Jake Fraser-McGurk</h3>
+            <p>Right Hand Batsman</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹9 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>247</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Strike Rate</span>
+            <span>168.02</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 3 - Harry Brook -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="hary.png" alt="Harry Brook" class="player-image">
+          <div class="player-info">
+            <h3>Harry Brook</h3>
+            <p>Right Hand Batsman</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹6.25 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>190</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Strike Rate</span>
+            <span>141.79</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 4 - Ashutosh Sharma -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="futurestar.png" alt="Ashutosh Sharma" class="player-image">
+          <div class="player-info">
+            <h3>Ashutosh Sharma</h3>
+            <p>Right Hand Batsman</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹3.8 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>156</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Strike Rate</span>
+            <span>171.42</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 5 - Faf du Plessis -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="fab.png" alt="Faf du Plessis" class="player-image">
+          <div class="player-info">
+            <h3>Faf du Plessis</h3>
+            <p>Right Hand Batsman</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹2 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>4,163</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Centuries</span>
+            <span>3</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 6 - Sameer Rizvi -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="smaeer.png" alt="Sameer Rizvi" class="player-image">
+          <div class="player-info">
+            <h3>Sameer Rizvi</h3>
+            <p>Right Hand Batsman</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹95 L</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>14</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Strike Rate</span>
+            <span>140.00</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 7 - Karun Nair -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="nair.png" alt="Karun Nair" class="player-image">
+          <div class="player-info">
+            <h3>Karun Nair</h3>
+            <p>Right Hand Batsman</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹50 L</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>1,496</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Highest Score</span>
+            <span>83*</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 8 - KL Rahul -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="kl.png" alt="KL Rahul" class="player-image">
+          <div class="player-info">
+            <h3>KL Rahul</h3>
+            <p>Wicketkeeper Batsman</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹14 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>4,163</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Centuries</span>
+            <span>4</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 9 - Tristan Stubbs -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="stubs.png" alt="Tristan Stubbs" class="player-image">
+          <div class="player-info">
+            <h3>Tristan Stubbs</h3>
+            <p>Wicketkeeper Batsman</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹10 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>378</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Strike Rate</span>
+            <span>168.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+        <p class="copyright">© 2025 Delhi Capitals</p>
+  </footer>
+</body>
+</html>
