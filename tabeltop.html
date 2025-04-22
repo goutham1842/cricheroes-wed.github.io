@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL 2025 Points Table</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #004C93;
+            --secondary: #D7182A;
+            --light: #F5F5F5;
+            --dark: #0E1E32;
+            --win: #4CAF50;
+            --loss: #F44336;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0E1E32, #1A2E46);
+            color: white;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--light);
+            font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .points-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .points-table thead th {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .points-table tbody tr {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        
+        .points-table tbody tr:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .points-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .team-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+        
+        .team-logo {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+        
+        .position {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .form {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+        }
+        
+        .win {
+            color: var(--win);
+            animation: bounce 0.5s ease;
+        }
+        
+        .loss {
+            color: var(--loss);
+            animation: shake 0.5s ease;
+        }
+        
+        .stats {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-3px); }
+            75% { transform: translateX(3px); }
+        }
+        
+        .highlight {
+            background-color: rgba(0, 76, 147, 0.3);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        @media (max-width: 768px) {
+            .points-table {
+                font-size: 0.9rem;
+            }
+            
+            .points-table thead th, 
+            .points-table td {
+                padding: 8px 5px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IPL 2025 Points Table</h1>
+        
+        <table class="points-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Team</th>
+                    <th>M</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>NRR</th>
+                    <th>For</th>
+                    <th>Against</th>
+                    <th>Pts</th>
+                    <th>Form</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- RCB -->
+                <tr class="highlight pulse">
+                    <td class="position">1</td>
+                    <td class="team-cell">
+                        <img src="rcblogo.png" alt="RCB" class="team-logo">
+                        RCB
+                    </td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td class="stats">+2.266</td>
+                    <td class="stats">373/36.2</td>
+                    <td class="stats">320/40.0</td>
+                    <td><strong>4</strong></td>
+                    <td class="form">
+                        <span class="win"><i class="fas fa-check"></i></span>
+                        <span class="win"><i class="fas fa-check"></i></span>
+                    </td>
+                </tr>
+                
+                <!-- PBKS -->
+                <tr>
+                    <td class="position">2</td>
+                    <td class="team-cell">
+                        <img src="pung.png" alt="PBKS" class="team-logo">
+                        PBKS
+                    </td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td class="stats">+1.485</td>
+                    <td class="stats">420/36.2</td>
+                    <td class="stats">403/40.0</td>
+                    <td><strong>4</strong></td>
+                    <td class="form">
+                        <span class="win"><i class="fas fa-check"></i></span>
+                        <span class="win"><i class="fas fa-check"></i></span>
+                    </td>
+                </tr>
+                
+                <!-- DC -->
+                <tr>
+                    <td class="position">3</td>
+                    <td class="team-cell">
+                        <img src="dcbest.png" alt="DC" class="team-logo">
+                        DC
+                    </td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td class="stats">+1.320</td>
+                    <td class="stats">377/35.3</td>
+                    <td class="stats">372/40.0</td>
+                    <td><strong>4</strong></td>
+                    <td class="form">
+                        <span class="win"><i class="fas fa-check"></i></span>
+                        <span class="win"><i class="fas fa-check"></i></span>
+                    </td>
+                </tr>
+                
+                <!-- GT -->
+                <tr>
+                    <td class="position">4</td>
+                    <td class="team-cell">
+                        <img src="gtlogo.png" alt="GT" class="team-logo">
+                        GT
+                    </td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td class="stats">+0.625</td>
+                    <td class="stats">428/40.0</td>
+                    <td class="stats">403/40.0</td>
+                    <td><strong>2</strong></td>
+                    <td class="form">
+                        <span class="win"><i class="fas fa-check"></i></span>
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                    </td>
+                </tr>
+                
+                <!-- MI -->
+                <tr>
+                    <td class="position">5</td>
+                    <td class="team-cell">
+                        <img src="milogo.png" alt="MI" class="team-logo">
+                        MI
+                    </td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td class="stats">+0.309</td>
+                    <td class="stats">436/52.5</td>
+                    <td class="stats">470/59.1</td>
+                    <td><strong>2</strong></td>
+                    <td class="form">
+                        <span class="win"><i class="fas fa-check"></i></span>
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                    </td>
+                </tr>
+                
+                <!-- LSG -->
+                <tr>
+                    <td class="position">6</td>
+                    <td class="team-cell">
+                        <img src="lsg.png" alt="LSG" class="team-logo">
+                        LSG
+                    </td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td class="stats">-0.150</td>
+                    <td class="stats">573/56.1</td>
+                    <td class="stats">578/55.5</td>
+                    <td><strong>2</strong></td>
+                    <td class="form">
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                        <span class="win"><i class="fas fa-check"></i></span>
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                    </td>
+                </tr>
+                
+                <!-- CSK -->
+                <tr>
+                    <td class="position">7</td>
+                    <td class="team-cell">
+                        <img src="csk.png" alt="CSK" class="team-logo">
+                        CSK
+                    </td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td class="stats">-0.771</td>
+                    <td class="stats">480/59.1</td>
+                    <td class="stats">533/60.0</td>
+                    <td><strong>2</strong></td>
+                    <td class="form">
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                        <span class="win"><i class="fas fa-check"></i></span>
+                    </td>
+                </tr>
+                
+                <!-- SRH -->
+                <tr>
+                    <td class="position">8</td>
+                    <td class="team-cell">
+                        <img src="srhbest.png" alt="SRH" class="team-logo">
+                        SRH
+                    </td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td class="stats">-0.871</td>
+                    <td class="stats">639/60.0</td>
+                    <td class="stats">601/52.1</td>
+                    <td><strong>2</strong></td>
+                    <td class="form">
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                        <span class="win"><i class="fas fa-check"></i></span>
+                    </td>
+                </tr>
+                
+                <!-- RR -->
+                <tr>
+                    <td class="position">9</td>
+                    <td class="team-cell">
+                        <img src="rrlogo.png" alt="RR" class="team-logo">
+                        RR
+                    </td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td class="stats">-1.112</td>
+                    <td class="stats">575/60.0</td>
+                    <td class="stats">615/57.3</td>
+                    <td><strong>2</strong></td>
+                    <td class="form">
+                        <span class="win"><i class="fas fa-check"></i></span>
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                    </td>
+                </tr>
+                
+                <!-- KKR -->
+                <tr>
+                    <td class="position">10</td>
+                    <td class="team-cell">
+                        <img src="kkrlogo.png" alt="KKR" class="team-logo">
+                        KKR
+                    </td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td class="stats">-1.428</td>
+                    <td class="stats">443/57.3</td>
+                    <td class="stats">449/49.1</td>
+                    <td><strong>2</strong></td>
+                    <td class="form">
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                        <span class="win"><i class="fas fa-check"></i></span>
+                        <span class="loss"><i class="fas fa-times"></i></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Add animation to table rows on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('.points-table tbody tr');
+            
+            rows.forEach((row, index) => {
+                // Delay animation for each row
+                row.style.animationDelay = `${index * 0.1}s`;
+                
+                // Add click effect
+                row.addEventListener('click', function() {
+                    this.classList.add('highlight');
+                    setTimeout(() => {
+                        this.classList.remove('highlight');
+                    }, 1000);
+                });
+            });
+            
+            // Highlight top team
+            const topTeam = document.querySelector('.points-table tbody tr:first-child');
+            topTeam.classList.add('pulse');
+        });
+    </script>
+</body>
+</html>

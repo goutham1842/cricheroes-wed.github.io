@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajasthan Royals 2025 | Pink Army</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rr-pink: #FF3366;
+      --rr-blue: #004BA8;
+      --rr-gold: #FFD700;
+      --rr-dark: #1A1A2E;
+      --rr-light: #F5F5F5;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #1A1A2E;
+      color: white;
+      margin: 0;
+      padding: 0;
+
+      background-size: cover;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--rr-dark);
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo img {
+      height: 40px;
+    }
+    
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--rr-gold);
+    }
+    
+    .header {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    
+    .header h1 {
+      font-size: 2.5rem;
+      color: var(--rr-pink);
+      margin-bottom: 1rem;
+    }
+    
+    .team-stats {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .stat-card {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      min-width: 120px;
+      text-align: center;
+    }
+    
+    .stat-card h3 {
+      color: var(--rr-gold);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-card p {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .players-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--rr-pink);
+    }
+    
+    .players-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .player-card {
+      background: rgba(30,30,46,0.7);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .player-header {
+      background: var(--rr-pink);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .player-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid var(--rr-gold);
+      object-fit: cover;
+    }
+    
+    .player-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+    
+    .player-details {
+      padding: 1.5rem;
+    }
+    
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    
+    .detail-label {
+      color: var(--rr-gold);
+      font-size: 0.9rem;
+    }
+    
+    .price {
+      color: var(--rr-blue);
+      font-weight: 800;
+    }
+    
+    .footer {
+      background: var(--rr-dark);
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--rr-pink);
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .copyright {
+      font-size: 0.9rem;
+      color: var(--rr-light);
+    }
+    
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .players-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="rrlogo.png" alt="Rajasthan Royals Logo">
+      <span class="logo-text">RAJASTHAN ROYALS</span>
+    </div>
+  </nav>
+
+  <header class="header">
+    <h1>RAJASTHAN ROYALS 2025</h1>
+    <p>The Pink Army is back with a vengeance! Meet the warriors who will bring home the trophy this season.</p>
+    
+    <div class="team-stats">
+      <div class="stat-card">
+        <h3>Total Players</h3>
+        <p>25</p>
+      </div>
+      <div class="stat-card">
+        <h3>Total Spent</h3>
+        <p>₹94 Cr</p>
+      </div>
+      <div class="stat-card">
+        <h3>Retained Players</h3>
+        <p>4</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="players-container">
+    <h2 class="section-title">HALL OF FAME</h2>
+    <div class="players-grid">
+      <!-- Player 1 - Sanju Samson -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="sanju.png" alt="Sanju Samson" class="player-image">
+          <div class="player-info">
+            <h3>Sanju Samson</h3>
+            <p>Wicketkeeper Batter</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹18 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>3,888</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Highest Score</span>
+            <span>119</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 2 - Yashasvi Jaiswal -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="raju.png" alt="Yashasvi Jaiswal" class="player-image">
+          <div class="player-info">
+            <h3>Yashasvi Jaiswal</h3>
+            <p>Left Hand Batter</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹18 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>1,492</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Strike Rate</span>
+            <span>148.90</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 3 - Riyan Parag -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="riyan.png" alt="Riyan Parag" class="player-image">
+          <div class="player-info">
+            <h3>Riyan Parag</h3>
+            <p>All-Rounder</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹14 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>835</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Wickets</span>
+            <span>14</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 4 - Dhruv Jurel -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="jrul.png" alt="Dhruv Jurel" class="player-image">
+          <div class="player-info">
+            <h3>Dhruv Jurel</h3>
+            <p>Wicketkeeper Batter</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹14 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>382</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Strike Rate</span>
+            <span>172.85</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 5 - Jofra Archer -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="jofra.png" alt="Jofra Archer" class="player-image">
+          <div class="player-info">
+            <h3>Jofra Archer</h3>
+            <p>Fast Bowler</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹12.5 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Wickets</span>
+            <span>48</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Best Bowling</span>
+            <span>3/15</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 6 - Shimron Hetmyer -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="hetmeir.png" alt="Shimron Hetmyer" class="player-image">
+          <div class="player-info">
+            <h3>Shimron Hetmyer</h3>
+            <p>Left Hand Batter</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹11 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Runs</span>
+            <span>1,032</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Strike Rate</span>
+            <span>152.30</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Player 7 - Wanindu Hasaranga -->
+      <div class="player-card">
+        <div class="player-header">
+          <img src="hasarna.png" alt="Wanindu Hasaranga" class="player-image">
+          <div class="player-info">
+            <h3>Wanindu Hasaranga</h3>
+            <p>Spin All-Rounder</p>
+          </div>
+        </div>
+        <div class="player-details">
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="price">₹10 Cr</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IPL Wickets</span>
+            <span>35</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Best Bowling</span>
+            <span>5/18</span>
+          </div>
+        </div>
+      </div>
+      
+           
+            
+         </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">RAJASTHAN ROYALS</div>
+       <p class="copyright">© 2025 Rajasthan Royals</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL 2025 Schedule</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #D7182A;
+            --secondary: #004C93;
+            --accent: #FFD700;
+            --dark: #0E1E32;
+            --light: #F5F5F5;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0E1E32, #1A2E46);
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            color: var(--accent);
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .schedule-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .match-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .match-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .match-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.2);
+        }
+        
+        .match-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.1);
+            z-index: 1;
+        }
+        
+        .match-date {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .match-date i {
+            font-size: 1.2rem;
+        }
+        
+        .match-day {
+            background: rgba(255,215,0,0.2);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        .teams {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .team {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .team-logo {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+        
+        .team-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .vs {
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 5px 0;
+            position: relative;
+        }
+        
+        .vs::before, .vs::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .vs::before {
+            left: 0;
+        }
+        
+        .vs::after {
+            right: 0;
+        }
+        
+        .match-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(255,255,255,0.1);
+        }
+        
+        .venue {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .time {
+            background: rgba(215,24,42,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        
+        .today {
+            background: rgba(215,24,42,0.3);
+            border: 1px solid var(--primary);
+            animation: pulse 2s infinite;
+        }
+        
+        .weekend {
+            border-left: 5px solid var(--accent);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(215,24,42,0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(215,24,42,0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .schedule-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IPL 2025 Schedule</h1>
+            <p class="subtitle">March - April 2025 • 74 Matches • 10 Teams</p>
+        </header>
+        
+        <div class="schedule-container">
+            <!-- Match 1 -->
+            <div class="match-card weekend">
+                <div class="match-number">1</div>
+                <div class="match-date">
+                    <i class="far fa-calendar-alt"></i>
+                    March 22, 2025
+                    <span class="match-day">Saturday</span>
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img src="kkr.png" alt="KKR" class="team-logo floating">
+                        <span class="team-name">Kolkata Knight Riders</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <img src="rcb.png" alt="RCB" class="team-logo floating">
+                        <span class="team-name">Royal Challengers Bengaluru</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="venue">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Kolkata • Eden Gardens
+                    </div>
+                    <div class="time">7:30 PM</div>
+                </div>
+            </div>
+            
+            <!-- Match 2 -->
+            <div class="match-card weekend">
+                <div class="match-number">2</div>
+                <div class="match-date">
+                    <i class="far fa-calendar-alt"></i>
+                    March 23, 2025
+                    <span class="match-day">Sunday</span>
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img src="srhbest.png" alt="SRH" class="team-logo floating">
+                        <span class="team-name">Sunrisers Hyderabad</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <img src="rr.png" alt="RR" class="team-logo floating">
+                        <span class="team-name">Rajasthan Royals</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="venue">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Hyderabad • Rajiv Gandhi Stadium
+                    </div>
+                    <div class="time">3:30 PM</div>
+                </div>
+            </div>
+            
+            <!-- Match 3 -->
+            <div class="match-card weekend today">
+                <div class="match-number">3</div>
+                <div class="match-date">
+                    <i class="far fa-calendar-alt"></i>
+                    March 23, 2025
+                    <span class="match-day">Sunday</span>
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img src="csk.png" alt="CSK" class="team-logo floating">
+                        <span class="team-name">Chennai Super Kings</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <img src="milogo.png" alt="MI" class="team-logo floating">
+                        <span class="team-name">Mumbai Indians</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="venue">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Chennai • M.A. Chidambaram Stadium
+                    </div>
+                    <div class="time">7:30 PM</div>
+                </div>
+            </div>
+            
+            <!-- Match 4 -->
+            <div class="match-card">
+                <div class="match-number">4</div>
+                <div class="match-date">
+                    <i class="far fa-calendar-alt"></i>
+                    March 24, 2025
+                    <span class="match-day">Monday</span>
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img src="dc.png" alt="DC" class="team-logo floating">
+                        <span class="team-name">Delhi Capitals</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <img src="lsg.png" alt="LSG" class="team-logo floating">
+                        <span class="team-name">Lucknow Super Giants</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="venue">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Visakhapatnam • ACA-VDCA Stadium
+                    </div>
+                    <div class="time">7:30 PM</div>
+                </div>
+            </div>
+            
+            <!-- Match 5 -->
+            <div class="match-card">
+                <div class="match-number">5</div>
+                <div class="match-date">
+                    <i class="far fa-calendar-alt"></i>
+                    March 25, 2025
+                    <span class="match-day">Tuesday</span>
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img src="gtlogo.png" alt="GT" class="team-logo floating">
+                        <span class="team-name">Gujarat Titans</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <img src="pung.png" alt="PBKS" class="team-logo floating">
+                        <span class="team-name">Punjab Kings</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="venue">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Ahmedabad • Narendra Modi Stadium
+                    </div>
+                    <div class="time">7:30 PM</div>
+                </div>
+            </div>
+            
+            <!-- Match 6 -->
+            <div class="match-card">
+                <div class="match-number">6</div>
+                <div class="match-date">
+                    <i class="far fa-calendar-alt"></i>
+                    March 26, 2025
+                    <span class="match-day">Wednesday</span>
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img src="rr.png" alt="RR" class="team-logo floating">
+                        <span class="team-name">Rajasthan Royals</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <img src="kkr.png" alt="KKR" class="team-logo floating">
+                        <span class="team-name">Kolkata Knight Riders</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="venue">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Guwahati • Barsapara Stadium
+                    </div>
+                    <div class="time">7:30 PM</div>
+                </div>
+            </div>
+            
+            <!-- Match 7 -->
+            <div class="match-card">
+                <div class="match-number">7</div>
+                <div class="match-date">
+                    <i class="far fa-calendar-alt"></i>
+                    March 27, 2025
+                    <span class="match-day">Thursday</span>
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img src="srhbest.png" alt="SRH" class="team-logo floating">
+                        <span class="team-name">Sunrisers Hyderabad</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <img src="lsg.png" alt="LSG" class="team-logo floating">
+                        <span class="team-name">Lucknow Super Giants</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="venue">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Hyderabad • Rajiv Gandhi Stadium
+                    </div>
+                    <div class="time">7:30 PM</div>
+                </div>
+            </div>
+            
+            <!-- Match 8 -->
+            <div class="match-card">
+                <div class="match-number">8</div>
+                <div class="match-date">
+                    <i class="far fa-calendar-alt"></i>
+                    March 28, 2025
+                    <span class="match-day">Friday</span>
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img src="csk.png" alt="CSK" class="team-logo floating">
+                        <span class="team-name">Chennai Super Kings</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <img src="rcb.png" alt="RCB" class="team-logo floating">
+                        <span class="team-name">Royal Challengers Bengaluru</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="venue">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Chennai • M.A. Chidambaram Stadium
+                    </div>
+                    <div class="time">7:30 PM</div>
+                </div>
+            </div>
+            
+            <!-- Match 9 -->
+            <div class="match-card weekend">
+                <div class="match-number">9</div>
+                <div class="match-date">
+                    <i class="far fa-calendar-alt"></i>
+                    March 29, 2025
+                    <span class="match-day">Saturday</span>
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img src="gtlogo.png" alt="GT" class="team-logo floating">
+                        <span class="team-name">Gujarat Titans</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <img src="mi.png" alt="MI" class="team-logo floating">
+                        <span class="team-name">Mumbai Indians</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="venue">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Ahmedabad • Narendra Modi Stadium
+                    </div>
+                    <div class="time">7:30 PM</div>
+                </div>
+            </div>
+            
+            <!-- Match 10 -->
+            <div class="match-card weekend">
+                <div class="match-number">10</div>
+                <div class="match-date">
+                    <i class="far fa-calendar-alt"></i>
+                    March 30, 2025
+                    <span class="match-day">Sunday</span>
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img src="dc.png" alt="DC" class="team-logo floating">
+                        <span class="team-name">Delhi Capitals</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <img src="srhbest.png" alt="SRH" class="team-logo floating">
+                        <span class="team-name">Sunrisers Hyderabad</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="venue">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Visakhapatnam • ACA-VDCA Stadium
+                    </div>
+                    <div class="time">3:30 PM</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Highlight today's match
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation delay to each card
+            const cards = document.querySelectorAll('.match-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                
+                // Add click effect
+                card.addEventListener('click', function() {
+                    this.classList.add('today');
+                    setTimeout(() => {
+                        this.classList.remove('today');
+                    }, 1000);
+                });
+            });
+            
+            // Make logos float on hover
+            const logos = document.querySelectorAll('.team-logo');
+            logos.forEach(logo => {
+                logo.addEventListener('mouseenter', function() {
+                    this.classList.add('floating');
+                });
+                
+                logo.addEventListener('mouseleave', function() {
+                    this.classList.remove('floating');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

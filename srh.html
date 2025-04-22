@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRH - IPL 2025 Squad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --srh-primary: #fb643e;
+      --srh-secondary: #000000;
+      --srh-accent: #ff8227;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: #fff;
+    }
+    
+    .hero-section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('srhcup.png') no-repeat center center;
+      background-size: cover;
+      position: relative;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    
+    .hero-content {
+      text-align: center;
+      z-index: 1;
+      padding: 0 20px;
+      max-width: 800px;
+    }
+    
+    .logo {
+      width: 200px;
+      margin-bottom: 30px;
+      animation: pulse 2s infinite, levitate 4s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes levitate {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .title {
+      font-size: 4.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--srh-primary);
+    }
+    
+    .subtitle {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+    
+    .scroll-down {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--srh-accent);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    
+    .squad-section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 3.5rem;
+      margin-bottom: 80px;
+      color: #fff;
+    }
+    
+    .players-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 50px;
+    }
+    
+    .player-card {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(251, 100, 62, 0.3);
+      border-top: 3px solid var(--srh-primary);
+      border-bottom: 3px solid var(--srh-accent);
+    }
+    
+    .player-image {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(to right, var(--srh-primary), var(--srh-accent)) 1;
+    }
+    
+    .player-info {
+      padding: 25px;
+      text-align: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+    }
+    
+    .player-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, var(--srh-primary), var(--srh-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .player-role {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .player-price {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #000;
+      background: linear-gradient(to right, var(--srh-primary), var(--srh-accent));
+      padding: 8px 15px;
+      border-radius: 20px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(251, 100, 62, 0.5);
+    }
+    
+    .player-card.retained::after {
+      content: 'RETAINED';
+      position: absolute;
+      top: 15px;
+      right: -30px;
+      background: var(--srh-primary);
+      color: #000;
+      font-weight: bold;
+      padding: 5px 30px;
+      transform: rotate(45deg);
+      font-size: 0.8rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    
+    .trophy-stats {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 50px;
+      margin: 80px 0;
+      border-radius: 20px;
+      text-align: center;
+      border: 2px solid;
+      border-image: linear-gradient(to right, var(--srh-primary), var(--srh-accent)) 1;
+      box-shadow: 0 0 30px rgba(251, 100, 62, 0.3);
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+    
+    .stat-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid rgba(251, 100, 62, 0.3);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--srh-primary), var(--srh-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      color: #ddd;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 80px 30px 40px;
+      background: #000;
+      color: #aaa;
+    }
+    
+    .social-links {
+      margin: 30px 0;
+    }
+    
+    .social-links a {
+      color: var(--srh-accent);
+      font-size: 1.8rem;
+      margin: 0 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .title {
+        font-size: 3rem;
+      }
+      
+      .subtitle {
+        font-size: 1.5rem;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .players-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+      }
+      
+      .player-card.retained::after {
+        right: -25px;
+        font-size: 0.7rem;
+        padding: 3px 25px;
+      }
+    }
+
+
+
+
+
+/* Add this to your existing CSS */
+
+.player-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-bottom: 2px solid #00a3e0;
+  transition: all 0.5s ease;
+  transform-origin: center bottom;
+}
+
+.player-card:hover .player-image {
+  animation: playerPhotoAnimation 1.5s ease-in-out;
+}
+
+@keyframes playerPhotoAnimation {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    filter: brightness(1);
+  }
+  25% {
+    transform: scale(1.03) translateY(-5px);
+    filter: brightness(1.1);
+  }
+  50% {
+    transform: scale(1) translateY(0);
+    filter: brightness(1);
+  }
+  75% {
+    transform: scale(1.02) translateY(-3px);
+    filter: brightness(1.05);
+  }
+}
+
+/* Optional: Add a blue pulse effect on hover */
+.player-card:hover {
+  box-shadow: 0 0 20px rgba(0, 163, 224, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Add a subtle initial animation when page loads */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.player-card {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Stagger the animations for each card */
+.player-card:nth-child(1) { animation-delay: 0.1s; }
+.player-card:nth-child(2) { animation-delay: 0.2s; }
+.player-card:nth-child(3) { animation-delay: 0.3s; }
+.player-card:nth-child(4) { animation-delay: 0.4s; }
+.player-card:nth-child(5) { animation-delay: 0.5s; }
+.player-card:nth-child(6) { animation-delay: 0.6s; }
+.player-card:nth-child(7) { animation-delay: 0.7s; }
+.player-card:nth-child(8) { animation-delay: 0.8s; }
+.player-card:nth-child(9) { animation-delay: 0.9s; }
+.player-card:nth-child(10) { animation-delay: 1s; }
+
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <div class="hero-content">
+      <img src="srhbest.png" alt="SRH Logo" class="logo">
+      <h1 class="title">SUNRISERS HYDERABAD</h1>
+      <p class="subtitle">IPL 2025 ORANGE ARMY</p>
+    </div>
+    <div class="scroll-down" onclick="scrollToSquad()">
+      <i class="fas fa-fire"></i>
+    </div>
+  </section>
+  
+  <section class="squad-section" id="squad">
+    <h2 class="section-title">FIRE AND FURY</h2>
+    
+    <div class="players-grid">
+      <div class="player-card retained">
+        <img src="katara.png" alt="Heinrich Klaasen" class="player-image">
+        <div class="player-info">
+          <h3 class="player-name">Heinrich Klaasen</h3>
+          <p class="player-role">Wicketkeeper-Batter</p>
+          <span class="player-price">Retained</span>
+        </div>
+      </div>
+      
+      <div class="player-card retained">
+        <img src="mental.png" alt="Travis Head" class="player-image">
+        <div class="player-info">
+          <h3 class="player-name">Travis Head</h3>
+          <p class="player-role">Batter</p>
+          <span class="player-price">Retained</span>
+        </div>
+      </div>
+      
+      <div class="player-card retained">
+        <img src="abhi.png" alt="Abhishek Sharma" class="player-image">
+        <div class="player-info">
+          <h3 class="player-name">Abhishek Sharma</h3>
+          <p class="player-role">All-rounder</p>
+          <span class="player-price">Retained</span>
+        </div>
+      </div>
+      
+      <div class="player-card retained">
+        <img src="nitesh.png" alt="Nitish Kumar Reddy" class="player-image">
+        <div class="player-info">
+          <h3 class="player-name">Nitish Kumar Reddy</h3>
+          <p class="player-role">All-rounder</p>
+          <span class="player-price">Retained</span>
+        </div>
+      </div>
+      
+      <div class="player-card retained">
+        <img src="pat.png" alt="Pat Cummins" class="player-image">
+        <div class="player-info">
+          <h3 class="player-name">Pat Cummins</h3>
+          <p class="player-role">Bowler • Captain</p>
+          <span class="player-price">Retained</span>
+        </div>
+      </div>
+      
+      <div class="player-card">
+        <img src="shami.png" alt="Mohammed Shami" class="player-image">
+        <div class="player-info">
+          <h3 class="player-name">Mohammed Shami</h3>
+          <p class="player-role">Bowler</p>
+          <span class="player-price">₹10 Cr</span>
+        </div>
+      </div>
+      
+      <div class="player-card">
+        <img src="patel.png" alt="Harshal Patel" class="player-image">
+        <div class="player-info">
+          <h3 class="player-name">Harshal Patel</h3>
+          <p class="player-role">Bowler</p>
+          <span class="player-price">₹8 Cr</span>
+        </div>
+      </div>
+      
+      <div class="player-card">
+        <img src="ishan.png" alt="Ishan Kishan" class="player-image">
+        <div class="player-info">
+          <h3 class="player-name">Ishan Kishan</h3>
+          <p class="player-role">Wicketkeeper-Batter</p>
+          <span class="player-price">₹11.25 Cr</span>
+        </div>
+      </div>
+      
+      <div class="player-card">
+        <img src="char.png" alt="Rahul Chahar" class="player-image">
+        <div class="player-info">
+          <h3 class="player-name">Rahul Chahar</h3>
+          <p class="player-role">Bowler</p>
+          <span class="player-price">₹3.20 Cr</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="trophy-stats">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">1</div>
+          <div class="stat-label">IPL Titles</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Finals Played</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">₹35.85 Cr</div>
+          <div class="stat-label">New Signings</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2013</div>
+          <div class="stat-label">Since</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2025 Sunrisers Hyderabad. All rights reserved.</p>
+    <p class="orange-army">#OrangeArmy #RiseWithUs</p>
+  </footer>
+  
+  <script>
+    function scrollToSquad() {
+      document.getElementById('squad').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
