@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL 2024 Players</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #1a237e, #283593);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            margin: 5px 0 0;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .player-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .player {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .player:hover {
+            background-color: #f8f9ff;
+            transform: translateX(5px);
+        }
+        
+        .player-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e0e0e0;
+            margin-right: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .player:hover .player-image {
+            transform: scale(1.1);
+            border-color: #1a237e;
+        }
+        
+        .player-info {
+            flex-grow: 1;
+        }
+        
+        .player-name {
+            font-weight: 600;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .player-role {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .player-salary {
+            background: linear-gradient(to right, #4caf50, #2e7d32);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            min-width: 100px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .top-player .player-salary {
+            background: linear-gradient(to right, #ff9800, #f57c00);
+        }
+        
+        .footer {
+            padding: 15px;
+            text-align: center;
+            background: #f5f5f5;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 600px) {
+            .player {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .player-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .player-info {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>IPL 2024 Player Salaries</h1>
+            <p>Official Auction Results</p>
+        </div>
+        
+        <ul class="player-list">
+            <li class="player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=SS" alt="Shashank Singh" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Shashank Singh</div>
+                    <div class="player-role">Batsman</div>
+                </div>
+                <div class="player-salary">Base Price</div>
+            </li>
+            
+            <li class="player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=PS" alt="Prabhsimran Singh" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Prabhsimran Singh</div>
+                    <div class="player-role">Wicketkeeper</div>
+                </div>
+                <div class="player-salary">Base Price</div>
+            </li>
+            
+            <li class="player top-player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=AS" alt="Arshdeep Singh" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Arshdeep Singh</div>
+                    <div class="player-role">Bowler</div>
+                </div>
+                <div class="player-salary">₹18 Cr</div>
+            </li>
+            
+            <li class="player top-player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=SI" alt="Shreyas Iyer" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Shreyas Iyer</div>
+                    <div class="player-role">Batsman</div>
+                </div>
+                <div class="player-salary">₹26.75 Cr</div>
+            </li>
+            
+            <li class="player top-player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=YC" alt="Yuzvendra Chahal" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Yuzvendra Chahal</div>
+                    <div class="player-role">Bowler</div>
+                </div>
+                <div class="player-salary">₹18 Cr</div>
+            </li>
+            
+            <li class="player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=MS" alt="Marcus Stoinis" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Marcus Stoinis</div>
+                    <div class="player-role">All-rounder</div>
+                </div>
+                <div class="player-salary">₹11 Cr</div>
+            </li>
+            
+            <li class="player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=GM" alt="Glenn Maxwell" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Glenn Maxwell</div>
+                    <div class="player-role">All-rounder</div>
+                </div>
+                <div class="player-salary">₹4.20 Cr</div>
+            </li>
+            
+            <li class="player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=NW" alt="Nehal Wadhera" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Nehal Wadhera</div>
+                    <div class="player-role">Batsman</div>
+                </div>
+                <div class="player-salary">₹4.20 Cr</div>
+            </li>
+            
+            <li class="player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=HB" alt="Harpreet Brar" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Harpreet Brar</div>
+                    <div class="player-role">Bowler</div>
+                </div>
+                <div class="player-salary">₹1.50 Cr</div>
+            </li>
+            
+            <li class="player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=VV" alt="Vishnu Vinod" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Vishnu Vinod</div>
+                    <div class="player-role">Wicketkeeper</div>
+                </div>
+                <div class="player-salary">₹0.95 Cr</div>
+            </li>
+            
+            <li class="player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=VV" alt="Vijaykumar Vyshak" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Vijaykumar Vyshak</div>
+                    <div class="player-role">Bowler</div>
+                </div>
+                <div class="player-salary">₹1.80 Cr</div>
+            </li>
+            
+            <li class="player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=YT" alt="Yash Thakur" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Yash Thakur</div>
+                    <div class="player-role">Bowler</div>
+                </div>
+                <div class="player-salary">₹1.60 Cr</div>
+            </li>
+            
+            <li class="player">
+                <img src="https://via.placeholder.com/150/1a237e/ffffff?text=MJ" alt="Marco Jansen" class="player-image">
+                <div class="player-info">
+                    <div class="player-name">Marco Jansen</div>
+                    <div class="player-role">All-rounder</div>
+                </div>
+                <div class="player-salary">₹7 Cr</div>
+            </li>
+        </ul>
+        
+        <div class="footer">
+            Total Players: 13 | Highest Bid: ₹26.75 Crores | Season 2024
+        </div>
+    </div>
+</body>
+</html>

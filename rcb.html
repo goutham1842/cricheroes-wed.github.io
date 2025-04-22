@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCB 2025 Squad | Royal Challengers Bangalore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --rcb-red: #EC1C24;
+      --rcb-gold: #FFD700;
+      --rcb-black: #000000;
+      --rcb-dark: #1A1A1A;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--rcb-black);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    
+    .logo {
+      width: 180px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px var(--rcb-red));
+    }
+    
+    .title {
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+    
+    .title span.rcb-red {
+      color: var(--rcb-red);
+      text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px var(--rcb-red),
+        0 0 20px var(--rcb-red),
+        0 0 25px var(--rcb-red),
+        0 0 30px var(--rcb-red),
+        0 0 35px var(--rcb-red);
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+      from {
+        text-shadow: 
+          0 0 5px #fff,
+          0 0 10px #fff,
+          0 0 15px var(--rcb-red),
+          0 0 20px var(--rcb-red),
+          0 0 25px var(--rcb-red),
+          0 0 30px var(--rcb-red),
+          0 0 35px var(--rcb-red);
+      }
+      to {
+        text-shadow: 
+          0 0 10px #fff,
+          0 0 15px #ff4d4d,
+          0 0 20px #ff4d4d,
+          0 0 25px #ff4d4d,
+          0 0 30px #ff4d4d,
+          0 0 35px #ff4d4d,
+          0 0 40px #ff4d4d;
+      }
+    }
+    
+    .subtitle {
+      font-size: 1.5rem;
+      color: #ddd;
+      margin-bottom: 30px;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+    
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--rcb-red);
+      font-size: 2rem;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+      40% {transform: translateY(-20px) translateX(-50%);}
+      60% {transform: translateY(-10px) translateX(-50%);}
+    }
+    
+    .squad-section {
+      padding: 80px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 60px;
+      color: white;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--rcb-red);
+      border-radius: 2px;
+    }
+    
+    .players-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    
+    .player-card {
+      width: 300px;
+      background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .player-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(236, 28, 36, 0.3);
+    }
+    
+    .player-image-container {
+      height: 350px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .player-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .player-card:hover .player-image {
+      transform: scale(1.05);
+    }
+    
+    .player-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--rcb-red);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    
+    .player-info {
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(to right, #2a2a2a, #1a1a1a);
+    }
+    
+    .player-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: white;
+    }
+    
+    .player-role {
+      font-size: 1rem;
+      color: #aaa;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .player-price {
+      display: inline-block;
+      padding: 8px 15px;
+      background: var(--rcb-gold);
+      color: black;
+      font-weight: 600;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    
+    .player-card.captain::before {
+      content: 'CAPTAIN';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--rcb-gold);
+      color: black;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      z-index: 2;
+    }
+    
+    .stats-section {
+      background: linear-gradient(to right, #1a1a1a, #2a2a2a);
+      padding: 60px 20px;
+      margin: 80px 0;
+      border-top: 3px solid var(--rcb-red);
+      border-bottom: 3px solid var(--rcb-red);
+    }
+    
+    .stats-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    
+    .stat-card {
+      background: rgba(0,0,0,0.3);
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid var(--rcb-red);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--rcb-red);
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      color: #ddd;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    footer {
+      background: #0f0f0f;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    
+    .footer-logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+    
+    .social-links {
+      margin: 20px 0;
+    }
+    
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--rcb-red);
+    }
+    
+    .copyright {
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2.5rem;
+      }
+      
+      .subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .player-card {
+        width: 100%;
+        max-width: 350px;
+      }
+      
+      .player-image-container {
+        height: 400px;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <img src="rcb.png" alt="RCB Logo" class="logo">
+    <h1 class="title"><span class="rcb-red">RCB</span> ROYAL CHALLENGERS BANGALORE</h1>
+    <p class="subtitle">The 2025 season brings new hope as we assemble a formidable squad to chase our maiden IPL championship</p>
+    <div class="scroll-down" onclick="scrollToSquad()">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </header>
+  
+  <section class="squad-section" id="squad">
+    <h2 class="section-title">2025 SQUAD</h2>
+    
+    <div class="players-container">
+      <div class="player-card captain">
+        <div class="player-image-container">
+          <img src="rcbwith.png" alt="Virat Kohli" class="player-image">
+        </div>
+        <div class="player-info">
+          <h3 class="player-name">Virat Kohli</h3>
+          <p class="player-role">Batter</p>
+          <span class="player-price">₹21 Crore</span>
+        </div>
+      </div>
+      
+      <div class="player-card">
+        <div class="player-badge">7</div>
+        <div class="player-image-container">
+          <img src="patidar.png" alt="Rajat Patidar" class="player-image">
+        </div>
+        <div class="player-info">
+          <h3 class="player-name">Rajat Patidar</h3>
+          <p class="player-role">Batter</p>
+          <span class="player-price">₹11 Crore</span>
+        </div>
+      </div>
+      
+      <div class="player-card">
+        <div class="player-badge">18</div>
+        <div class="player-image-container">
+          <img src="dial.png" alt="Yash Dayal" class="player-image">
+        </div>
+        <div class="player-info">
+          <h3 class="player-name">Yash Dayal</h3>
+          <p class="player-role">Bowler</p>
+          <span class="player-price">₹5 Crore</span>
+        </div>
+      </div>
+      
+      <div class="player-card">
+        <div class="player-badge">9</div>
+        <div class="player-image-container">
+          <img src="salt.png" alt="Phil Salt" class="player-image">
+        </div>
+        <div class="player-info">
+          <h3 class="player-name">Phil Salt</h3>
+          <p class="player-role">Wicketkeeper</p>
+          <span class="player-price">₹11.5 Crore</span>
+        </div>
+      </div>
+      
+      <div class="player-card">
+        <div class="player-badge">22</div>
+        <div class="player-image-container">
+          <img src="rit.png" alt="Jitesh Sharma" class="player-image">
+        </div>
+        <div class="player-info">
+          <h3 class="player-name">Jitesh Sharma</h3>
+          <p class="player-role">Wicketkeeper</p>
+          <span class="player-price">₹11 Crore</span>
+        </div>
+      </div>
+      
+      <div class="player-card">
+        <div class="player-badge">38</div>
+        <div class="player-image-container">
+          <img src="wood.png" alt="Josh Hazlewood" class="player-image">
+        </div>
+        <div class="player-info">
+          <h3 class="player-name">Josh Hazlewood</h3>
+          <p class="player-role">Bowler</p>
+          <span class="player-price">₹12.5 Crore</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stats-section">
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-number">0</div>
+          <div class="stat-label">IPL Titles</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Finals Played</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">₹72 Cr</div>
+          <div class="stat-label">Squad Value</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2008</div>
+          <div class="stat-label">Since</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <img src="rcb.png" alt="RCB Logo" class="footer-logo">
+    <div class="social-links">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p class="copyright">© 2025 Royal Challengers Bangalore. All Rights Reserved.</p>
+  </footer>
+  
+  <script>
+    function scrollToSquad() {
+      document.getElementById('squad').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Animate elements when they come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, observerOptions);
+      
+      const cards = document.querySelectorAll('.player-card, .stat-card');
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
+</body>
+</html>
